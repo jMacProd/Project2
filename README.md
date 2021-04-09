@@ -23,24 +23,24 @@ Under construction
     
         * Directory: css
             * style.css
-        * Directotry: js
-        
+            
+        * Directory: js
             * appbubbleplot.js
             * applineplot.js
             * appsunburst.js
             * apptoptweet.js
             * appwordcloud.js
             
-        * Directotry: placeholder_images
+        * Directory: placeholder_images
             * bubbleplot.png
             * lineplot.png
             * sunburst.png
             * wordcloud.png
             
-        * Directotry: templates
+        * Directory: templates
             * index.html
                 
-        * Directotry: Working documents
+        * Directory: Working documents
 
 ## Running order and notes
 ### Step 1 - Launching html page
