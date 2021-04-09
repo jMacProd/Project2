@@ -1,17 +1,64 @@
 # Project2
 
 ## Proposal Google Doc
-https://docs.google.com/document/d/1mLOU8C87V4_bWTs-eqrpyNpZDkMEsH-7PAyjc5GbHdM/edit?usp=sharing
+For the time being see proposal doc -
+https://docs.google.com/document/d/1mLOU8C87V4_bWTs-eqrpyNpZDkMEsH-7PAyjc5GbHdM/edit?usp=sharinghttps://docs.google.com/document/d/1mLOU8C87V4_bWTs-eqrpyNpZDkMEsH-7PAyjc5GbHdM/edit?usp=sharing
+
+## CONTRIBUTORS:
+Swobabika Jena
+Diana Madonko
+Thomas ? 
+Jason Sutton
+
+## Status
+Under construction
+
+## Navigating the repository
+* File: app.py
+
+    * Directory: static
+    
+        * Directory: css
+            * style.css
+        * Directotry: js
+        
+            * appbubbleplot.js
+            * applineplot.js
+            * appsunburst.js
+            * apptoptweet.js
+            * appwordcloud.js
+            
+        * Directotry: placeholder_images
+            * bubbleplot.png
+            * lineplot.png
+            * sunburst.png
+            * wordcloud.png
+            
+        * Directotry: templates
+            * index.html
+                
+        * Directotry: Working documents
+
+## Running order and notes
+### Step 1 - Launching html page
+
+**Run: app.py**
+* From Terminal in it's own environment - need to work this out
+* Visit http://127.0.0.1:5000/ in web browser
+
+## Final Output
+* Insert screen shot
+
 
 ## Technologies
-* Python 3.6
+
 
 
 ## Entity Relationship Diagram
 ![Entity Relationship Diagram](https://github.com/jMacProd/javascript-challenge/blob/main/Process%20Maps/UFO_Dynamic_Table_Webpage_Part1.png)
 
 
-## Data Clean
+## Data Mungling
 * Imported three relational CSV datasets into Python
 * Converted unix(?) date to standard date-time and removed time
 * Filtered dataframe to include 1 year of tweets
