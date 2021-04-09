@@ -16,6 +16,9 @@ Under construction
 ## Navigating the repository
 * File: app.py
 
+    * Directory: Data
+        * top5writers_May.csv
+    
     * Directory: static
     
         * Directory: css
