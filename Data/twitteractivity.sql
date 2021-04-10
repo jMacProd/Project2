@@ -1,5 +1,5 @@
 -- Drop table if exists
-DROP TABLE topwritersmay;
+DROP TABLE IF EXISTS topwritersmay;
 
 CREATE TABLE topwritersmay (
 	ticker_symbol VARCHAR,
