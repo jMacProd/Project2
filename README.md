@@ -13,6 +13,18 @@ Jason Sutton
 ## Status
 Under construction
 
+## Environment
+* conda create -n project2 python=3.6
+* conda activate project2
+* pip install gunicorn
+* pip install flask
+* pip install flask-sqlalchemy
+
+
+* pip install psycopg2
+* pip install pandas
+* pip intall simplejson
+
 ## Navigating the repository
 * File: app.py
 
