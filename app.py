@@ -115,8 +115,9 @@ def apple():
         twitterposts.reaction_total
     ).all()
 #       .filter(twitterposts.company_name == "apple").all()
+    return jsonify(results)
 
-    return simplejson.dumps(results)
+    # return simplejson.dumps(results)
 
     # company = [results[0] for result in results]
     # writer = [results[2] for result in results]
