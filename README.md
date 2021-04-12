@@ -13,20 +13,23 @@ Jason Sutton
 ## Status
 Under construction
 
-## Environment
+## Set Up Environment
 * conda create -n project2 python=3.6
 * conda activate project2
 * pip install gunicorn
 * pip install flask
 * pip install flask-sqlalchemy
-
-
-* pip install psycopg2
-* pip install pandas
 * pip intall simplejson
 
+**Do not need at the moment**
+* pip install psycopg2
+* pip install pandas
+* 
+
 ## Navigating the repository
-* File: app.py
+* app.py
+* config.py
+* models.py
 
     * Directory: Data
         * top5writers_May.csv
@@ -44,23 +47,28 @@ Under construction
             * apptoptweet.js
             * appwordcloud.js
             
-        * Directory: placeholder_images
-            * bubbleplot.png
-            * lineplot.png
-            * sunburst.png
-            * wordcloud.png
-            
         * Directory: templates
             * index.html
                 
+        * Directory: placeholder_images
         * Directory: Working documents
 
-## Running order and notes
-### Step 1 - Launching html page
+## Order for running flask with database on local server
 
-**Run: app.py**
-* From Terminal in it's own environment - need to work this out
-* Visit http://127.0.0.1:5000/ in web browser
+### Step 1 - Establishing local database
+* **Launch:** pgadmin
+* **Open:** twitteractivity.sql and run to establish table schema
+* **Import:** top5writers_May.csv
+
+### Step 3: - Connecting flask app to local database 
+* **Edit:** config.py to your pgAdmin username and password
+
+### Step 2 - Launching html page
+* **Launch:** gitbash/terminal at project route directory
+* **Enter into gitbush/terminal:** conda activate project2
+* **Enter into gitbush/terminal:** python app.py
+* **Go to:** http://127.0.0.1:5000/ in Google Chrome
+* **Click:** a company button to show visualisation for relevent data
 
 ## Final Output
 * Insert screen shot
@@ -85,8 +93,6 @@ Under construction
 * Dropped all writers who had less that 365 tweets (ie didn't tweet every day)
 * Filtered to top 200 writers as per the total sum of the likes, shares and comments of their tweets. 
 * Exported to new CSV
-
-
 
 
 ## Resources
