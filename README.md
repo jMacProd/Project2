@@ -5,10 +5,10 @@ For the time being see proposal doc -
 https://docs.google.com/document/d/1mLOU8C87V4_bWTs-eqrpyNpZDkMEsH-7PAyjc5GbHdM/edit?usp=sharinghttps://docs.google.com/document/d/1mLOU8C87V4_bWTs-eqrpyNpZDkMEsH-7PAyjc5GbHdM/edit?usp=sharing
 
 ## CONTRIBUTORS:
-Swobabika Jena
-Diana Madonko
-Thomas ? 
-Jason Sutton
+* Swobabika Jena
+* Diana Madonko
+* Thomas Maina 
+* Jason Sutton
 
 ## Status
 Under construction
