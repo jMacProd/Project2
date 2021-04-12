@@ -19,10 +19,11 @@ Under construction
 * pip install gunicorn
 * pip install flask
 * pip install flask-sqlalchemy
-* pip intall simplejson
+* pip install simplejson
+* pip install psycopg2
 
 **Do not need at the moment**
-* pip install psycopg2
+
 * pip install pandas
 * 
 

@@ -93,3 +93,11 @@ var layout = {
 
 
 Plotly.newPlot('sunburstplot', data, layout);
+
+var url = '/apple'
+d3.json(url).then(function(data) {
+  var labels = []
+  var parents = []
+  var values = []
+  
+});

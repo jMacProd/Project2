@@ -1,3 +1,36 @@
+import numpy as np
+
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func
+
+from flask import Flask, jsonify
+from sqlalchemy import create_engine
+
+from flask import Response,json
+
+from flask import Flask, jsonify
+
+from flask import Flask, render_template
+
+#################################################
+# Database Setup
+#################################################
+engine = create_engine("postgres://kthtpzlsmlklig:4078440dd259b1618e3607054fff276bd4ec0f2a4e2bbe25b310087db53f2752@ec2-3-233-43-103.compute-1.amazonaws.com:5432/dbnbctndv895hi")
+
+# reflect an existing database into a new model
+Base = automap_base()
+# reflect the tables
+Base.prepare(engine, reflect=True)
+
+# Save reference to the table
+
+results = engine.execute("SELECT  * FROM topwritersmay").fetchall()
+
+
+
+
 #################################################
 # import necessary libraries
 #################################################
@@ -6,7 +39,6 @@
 from models import create_classes
 import os
 from flask import (
-    Flask,
     render_template,
     jsonify,
     request,
