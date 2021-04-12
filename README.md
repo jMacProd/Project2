@@ -76,12 +76,6 @@ Under construction
 
 ## Technologies
 
-
-
-## Entity Relationship Diagram
-![Entity Relationship Diagram](https://github.com/jMacProd/javascript-challenge/blob/main/Process%20Maps/UFO_Dynamic_Table_Webpage_Part1.png)
-
-
 ## Data Mungling
 * Imported three relational CSV datasets into Python
 * Converted unix(?) date to standard date-time and removed time
