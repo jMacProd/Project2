@@ -125,6 +125,35 @@ def home():
     return render_template("index.html")
    
 
+
+#################################################
+# create route that calls all data
+#################################################
+
+@app.route("/fulldata")
+def fulldata():
+
+    # return (
+    #     "<h2>You have clicked the Apple button</h2>"
+    # )
+
+    #Get all data
+    results = db.session.query(
+        twitterposts.ticker_symbol,
+        twitterposts.company_name,
+        twitterposts.tweet_id,
+        twitterposts.writer,
+        twitterposts.post_date,
+        twitterposts.body,
+        twitterposts.comment_num,
+        twitterposts.retweet_num,
+        twitterposts.like_num,
+        twitterposts.reaction_total
+    ).all()
+#       .filter(twitterposts.company_name == "apple").all()
+    return jsonify(results)
+
+
 #################################################
 # create apple route that calls data on apple?
 #################################################
@@ -152,6 +181,9 @@ def apple():
 #       .filter(twitterposts.company_name == "apple").all()
     return jsonify(results)
 
+#################################################
+# create amazon route that calls data on amazon?
+#################################################
 @app.route("/amazon")
 def amazon():
 

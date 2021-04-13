@@ -4,8 +4,8 @@ function sunplot() {
   
     d3.json(url).then(function(data) {
   
-        console.log("line plot js");
-        console.log(data);
+        // console.log("line plot js");
+        // console.log(data);
 
         var date = data.map(data => data.post_date);
         console.log("date", date);
