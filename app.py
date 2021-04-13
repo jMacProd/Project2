@@ -1,33 +1,36 @@
-import numpy as np
+# import numpy as np
 
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
+# import sqlalchemy
+# from sqlalchemy.ext.automap import automap_base
+# from sqlalchemy.orm import Session
+# from sqlalchemy import create_engine, func
 
-from flask import Flask, jsonify
-from sqlalchemy import create_engine
+# from flask import Flask, jsonify
+# from sqlalchemy import create_engine
 
-from flask import Response,json
+# from flask import Response,json
 
-from flask import Flask, jsonify
+# from flask import Flask, jsonify
 
-from flask import Flask, render_template
+# from flask import Flask, render_template
 
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("postgres://kthtpzlsmlklig:4078440dd259b1618e3607054fff276bd4ec0f2a4e2bbe25b310087db53f2752@ec2-3-233-43-103.compute-1.amazonaws.com:5432/dbnbctndv895hi")
+# engine = create_engine("postgres://kthtpzlsmlklig:4078440dd259b1618e3607054fff276bd4ec0f2a4e2bbe25b310087db53f2752@ec2-3-233-43-103.compute-1.amazonaws.com:5432/dbnbctndv895hi")
 
 # reflect an existing database into a new model
-Base = automap_base()
+# Base = automap_base()
 # reflect the tables
-Base.prepare(engine, reflect=True)
+# Base.prepare(engine, reflect=True)
 
 # Save reference to the table
 
-results = engine.execute("SELECT  * FROM topwritersmay").fetchall()
+# results = engine.execute("SELECT  * FROM topwritersmay").fetchall()
 
+# import pandas as pd
+
+# x = pd.DataFrame(results)
 
 
 
@@ -39,6 +42,7 @@ results = engine.execute("SELECT  * FROM topwritersmay").fetchall()
 from models import create_classes
 import os
 from flask import (
+    Flask,
     render_template,
     jsonify,
     request,
@@ -121,8 +125,6 @@ def home():
     return render_template("index.html")
    
 
-
-
 #################################################
 # create apple route that calls data on apple?
 #################################################
@@ -136,6 +138,7 @@ def apple():
 
     #Get all data about Apple
     results = db.session.query(
+        twitterposts.ticker_symbol,
         twitterposts.company_name,
         twitterposts.tweet_id,
         twitterposts.writer,
@@ -145,7 +148,30 @@ def apple():
         twitterposts.retweet_num,
         twitterposts.like_num,
         twitterposts.reaction_total
-    ).all()
+    ).filter(twitterposts.ticker_symbol == 'AAPL').all()
+#       .filter(twitterposts.company_name == "apple").all()
+    return jsonify(results)
+
+@app.route("/amazon")
+def amazon():
+
+    # return (
+    #     "<h2>You have clicked the Apple button</h2>"
+    # )
+
+    #Get all data about Apple
+    results = db.session.query(
+        twitterposts.ticker_symbol,
+        twitterposts.company_name,
+        twitterposts.tweet_id,
+        twitterposts.writer,
+        twitterposts.post_date,
+        twitterposts.body,
+        twitterposts.comment_num,
+        twitterposts.retweet_num,
+        twitterposts.like_num,
+        twitterposts.reaction_total
+    ).filter(twitterposts.ticker_symbol == 'AMZN').all()
 #       .filter(twitterposts.company_name == "apple").all()
     return jsonify(results)
 

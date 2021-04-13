@@ -15,7 +15,7 @@ Under construction
 
 ## Set Up Environment
 * conda create -n project2 python=3.6
-* conda activate project2
+*   
 * pip install gunicorn
 * pip install flask
 * pip install flask-sqlalchemy
