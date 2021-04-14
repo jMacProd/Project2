@@ -149,13 +149,13 @@ def fulldata():
         twitterposts.retweet_num,
         twitterposts.like_num,
         twitterposts.reaction_total
-    ).all()
+    ).order_by(twitterposts.post_date).all()
 #       .filter(twitterposts.company_name == "apple").all()
     return jsonify(results)
 
 
 #################################################
-# create apple route that calls data on apple?
+# create apple route that calls data on apple
 #################################################
 
 @app.route("/AAPL")
@@ -177,14 +177,15 @@ def apple():
         twitterposts.retweet_num,
         twitterposts.like_num,
         twitterposts.reaction_total
-    ).filter(twitterposts.ticker_symbol == 'AAPL').all()
+    ).filter(twitterposts.ticker_symbol == 'AAPL')\
+    .order_by(twitterposts.post_date).all()
 #       .filter(twitterposts.company_name == "apple").all()
     return jsonify(results)
     # return redirect("/")
 
 
 #################################################
-# create amazon route that calls data on amazon?
+# create amazon route that calls data on amazon
 #################################################
 @app.route("/AMZN")
 def amazon():
@@ -193,7 +194,7 @@ def amazon():
     #     "<h2>You have clicked the Apple button</h2>"
     # )
 
-    #Get all data about Apple
+    #Get all data about amazon
     results = db.session.query(
         twitterposts.ticker_symbol,
         twitterposts.company_name,
@@ -205,11 +206,12 @@ def amazon():
         twitterposts.retweet_num,
         twitterposts.like_num,
         twitterposts.reaction_total
-    ).filter(twitterposts.ticker_symbol == 'AMZN').all()
+    ).filter(twitterposts.ticker_symbol == 'AMZN')\
+    .order_by(twitterposts.post_date).all()
     return jsonify(results)
 
 #################################################
-# create Google Inc route that calls data on Google Inc?
+# create Google Inc route that calls data on Google Inc
 #################################################
 @app.route("/GOOG")
 def google():
@@ -218,7 +220,7 @@ def google():
     #     "<h2>You have clicked the Apple button</h2>"
     # )
 
-    #Get all data about Apple
+    #Get all data about Google
     results = db.session.query(
         twitterposts.ticker_symbol,
         twitterposts.company_name,
@@ -230,11 +232,12 @@ def google():
         twitterposts.retweet_num,
         twitterposts.like_num,
         twitterposts.reaction_total
-    ).filter(twitterposts.ticker_symbol == 'GOOG').all()
+    ).filter(twitterposts.ticker_symbol == 'GOOG')\
+    .order_by(twitterposts.post_date).all()
     return jsonify(results)
 
 #################################################
-# create Microsoft  route that calls data on Microsoftnc?
+# create Microsoft  route that calls data on Microsoft
 #################################################
 @app.route("/MSFT")
 def microsoft():
@@ -243,7 +246,7 @@ def microsoft():
     #     "<h2>You have clicked the Apple button</h2>"
     # )
 
-    #Get all data about Apple
+    #Get all data about Microsoft
     results = db.session.query(
         twitterposts.ticker_symbol,
         twitterposts.company_name,
@@ -255,11 +258,12 @@ def microsoft():
         twitterposts.retweet_num,
         twitterposts.like_num,
         twitterposts.reaction_total
-    ).filter(twitterposts.ticker_symbol == 'MSFT').all()
+    ).filter(twitterposts.ticker_symbol == 'MSFT')\
+    .order_by(twitterposts.post_date).all()
     return jsonify(results)
 
 #################################################
-# create Tesla Inc  route that calls data on Tesla Inc?
+# create Tesla Inc  route that calls data on Tesla Inc
 #################################################
 @app.route("/TSLA")
 def tesla():
@@ -268,7 +272,7 @@ def tesla():
     #     "<h2>You have clicked the Apple button</h2>"
     # )
 
-    #Get all data about Apple
+    #Get all data about Tesla
     results = db.session.query(
         twitterposts.ticker_symbol,
         twitterposts.company_name,
@@ -280,7 +284,8 @@ def tesla():
         twitterposts.retweet_num,
         twitterposts.like_num,
         twitterposts.reaction_total
-    ).filter(twitterposts.ticker_symbol == 'TSLA').all()
+    ).filter(twitterposts.ticker_symbol == 'TSLA')\
+    .order_by(twitterposts.post_date).all()
     return jsonify(results)
 
     # return simplejson.dumps(results)

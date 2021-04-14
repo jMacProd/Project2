@@ -4,7 +4,7 @@ function sunplot() {
 
   d3.json(url).then(function(data) {
 
-    // console.log(data);
+    // console.log(data.);
 
     var labels = [];
   
@@ -124,7 +124,7 @@ function sunplot() {
 sunplot();
 
 ///////////////////////////////////
-// DO WE NEED TO DO A LISTENING EVENT
+// LISTENING EVENT
 //Drop box manually created on html
 
 //Reference the input field id
@@ -156,13 +156,13 @@ function runEnter() {
 // //UPDATE the sunburst chart
 function updatesunplot(indexnumber) {
 
-  console.log(indexnumber);
+  // console.log(indexnumber);
 
   var url = `/${indexnumber}`
 
   d3.json(url).then(function(data) {
 
-    // console.log(data);
+    console.log(data);
 
     var labels = [];
   
