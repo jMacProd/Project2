@@ -1,6 +1,6 @@
-function sunplot() {
+function lineplot() {
 
-    var url = '/apple'
+    var url = '/AAPL'
   
     d3.json(url).then(function(data) {
   
@@ -75,4 +75,4 @@ function sunplot() {
 
     });
 }
-sunplot()
+lineplot();

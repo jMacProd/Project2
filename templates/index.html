@@ -26,8 +26,18 @@
             <h1>Twitter Traffic</h1>
             <p>The top performers on the NASDAQ is Apple, Google, Amazon, Microsoft and Tesla.</p>
             <p>Here's the activity of the top tweeters.</p>
-            <a href="/apple" type="button" class="btn btn-primary btn-sm">Apple Mentions</a>
-            <a href="/amazon" type="button" class="btn btn-primary btn-sm">Amazom Mentions</a>
+            <!-- <a href="/apple" type="button" class="btn btn-primary btn-sm">Apple Mentions</a>
+            <a href="/amazon" type="button" class="btn btn-primary btn-sm">Amazom Mentions</a> -->
+            <div class="well">
+                <h5>Select a company.:</h5>
+                <select id="selDataset">
+                    <option id="0" value="AAPL">Apple</option>
+                    <option id="1" value="AMZN">Amazon.com</option>
+                    <option id="2" value="GOOG">Google Inc</option>
+                    <option id="3" value="MSFT">Microsoft</option>
+                    <option id="4" value="TSLA">Tesla Inc</option>
+                </select><!--onchange="optionChanged(this.value)"-->
+              </div>
         </div>
 
         <!-- ROW 1 -->
