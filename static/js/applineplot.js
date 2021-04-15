@@ -1,6 +1,6 @@
 function lineplot() {
 
-  var url = '/AAPL'
+  var url = '/fulldata'
 
   d3.json(url).then(function(data) {
     var Xaxis = [];

@@ -150,7 +150,7 @@ def fulldata():
         twitterposts.like_num,
         twitterposts.reaction_total
     ).order_by(twitterposts.post_date).all()
-#       .filter(twitterposts.company_name == "apple").all()
+    
     return jsonify(results)
 
 
