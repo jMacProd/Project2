@@ -3,4 +3,4 @@
 user = "postgres"
 
 # pgadmin database password
-password ="Prince77!"
+password ="Your postgres key"
