@@ -17,8 +17,8 @@ if not engine.has_table("pets"):
 
     new_table = Table(
         'topwritersmay', meta,
-        Column('ticker_symbol', String)
-        Column('company_name', String)
+        Column('ticker_symbol', String),
+        Column('company_name', String),
         Column('tweet_id', String, primary_key=True),
         Column('writer', String),
         Column('post_date', String),
