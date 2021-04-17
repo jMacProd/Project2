@@ -26,41 +26,36 @@
             <h1>Twitter Traffic</h1>
             <p>The top performers on the NASDAQ is Apple, Google, Amazon, Microsoft and Tesla.</p>
             <p>Here's the activity of the top tweeters.</p>
-            <!-- <a href="/apple" type="button" class="btn btn-primary btn-sm">Apple Mentions</a>
-            <a href="/amazon" type="button" class="btn btn-primary btn-sm">Amazom Mentions</a> -->
+            <a href="/apple" type="button" class="btn btn-primary btn-sm">Apple Mentions</a>
+            <a href="/amazon" type="button" class="btn btn-primary btn-sm">Amazon Mentions</a>
             <div class="well">
                 <h5>Select a company.:</h5>
                 <select id="selDataset">
-                    <!-- <option id="0" value="fulldata">All Data</option> -->
+                    <option id="0" value="fulldata">All Data</option>
                     <option id="1" value="AAPL">Apple</option>
                     <option id="2" value="AMZN">Amazon.com</option>
                     <option id="3" value="GOOG">Google Inc</option>
                     <option id="4" value="MSFT">Microsoft</option>
                     <option id="5" value="TSLA">Tesla Inc</option>
                 </select><!--onchange="optionChanged(this.value)"-->
-              </div>
+            </div>
         </div>
 
         <!-- ROW 1 -->
         <div class="row">
             <!--CELL 1 OF 2 -->
             <div class="col-md-6">
-                <h2>Top Tweet</h2>
-                <p><i>Based on the sum of likes, comments and shares</i></p>
-                <div id="toptweet">
-                    <p><i>Sample placement</i> - $aapl settled +1.0% at $157.74, and that made for a second black-fail candle, which leans s/t bearish, if only for the wednesday open. note the 50dma, will be around 174/76 gap zone next week."</p>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <p>Likes: 5</p>
-                        </div>
-                        <div class="col-md-4">
-                            <p>Comments: 5</p>
-                        </div>
-                        <div class="col-md-4">
-                            <p>Shares: 5</p>
-                        </div>
+                <div class="well">
+                    <h5>Choose the kind of tweet you would like to see</h5>
+                   <select id="toptweet" onchange="getval(this)"></select>
+                  </div>
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Tweet:</h3>
                     </div>
-                </div>
+                    <div id="sample-metadata" class="panel-body"></div>
+                  </div>
+
             </div>
 
             <!--CELL 2 OF 2 -->
@@ -80,8 +75,7 @@
             <div class="col-md-8">
                 <h2>Month Activity</h2>
                 <div id="lineplot">
-                    <!-- <p><i>Sample placement</i></p>
-                    <img src="static/placeholder_images/lineplot.png"> -->
+
                 </div>
             </div>
 
