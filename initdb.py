@@ -34,7 +34,7 @@ if not engine.has_table("pets"):
     print("Table created")
 
     seed_data = [
-        {"ticker_symbol": "AAPL", "company_name": "apple", "tweet_id": 1123390000000000000, "writer": "gerberkawasaki" "post_date": "1/5/2019", "body": "thoughts on apple and innovation from #cnbc today. check it out. i‚Äôm towards the end. it was hot. @cnbc $aapl", "comment_num":5, "retweet_num": 4, "like_num":18, "reaction_total":27}, 
+        {"ticker_symbol": "AAPL", "company_name": "apple", "tweet_id": "1123390000000000000", "writer": "gerberkawasaki", "post_date": "1/5/2019", "body": "thoughts on apple and innovation", "comment_num": 5, "retweet_num": 4, "like_num": 18, "reaction_total": 27}, 
     ]
 
     with engine.connect() as conn:
