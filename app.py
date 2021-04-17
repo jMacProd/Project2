@@ -104,7 +104,7 @@ app = Flask(__name__)
 
 # #SQLAlchemy - from Pet Pals example - no idea what it is doing
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///db.sqlite"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace("://", "ql://", 1) or "sqlite:///db.sqlite"
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://{user}:{password}@localhost:5432/twitteractivity'
 # app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@localhost:5432/twitteractivity'
 
