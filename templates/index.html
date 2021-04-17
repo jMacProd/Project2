@@ -25,7 +25,7 @@
         <div class="jumbotron" style="text-align: center">
             <h1>Twitter Traffic</h1>
             <p>The top performers on the NASDAQ is Apple, Google, Amazon, Microsoft and Tesla.</p>
-            <p>Here's the activity of the top tweeters.</p>
+            <p>Here's the twitter activity around these companies.</p>
             <!-- <a href="/apple" type="button" class="btn btn-primary btn-sm">Apple Mentions</a> -->
             <!-- <a href="/amazon" type="button" class="btn btn-primary btn-sm">Amazon Mentions</a> -->
             <!-- <div class="well">
@@ -77,7 +77,6 @@
                 <div class="well">
                 <h5>Select a company.:</h5>
                 <select id="selDataset">
-                    <option id="0" value="fulldata">All Data</option>
                     <option id="1" value="AAPL">Apple</option>
                     <option id="2" value="AMZN">Amazon.com</option>
                     <option id="3" value="GOOG">Google Inc</option>
@@ -216,8 +215,8 @@
     <script src="{{ url_for('static', filename='js/apptoptweet.js') }}"></script>
     <script src="{{ url_for('static', filename='js/appwordcloud.js') }}"></script>
     <script src="{{ url_for('static', filename='js/applineplot.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/linechartupdate.js') }}"></script>
     <script src="{{ url_for('static', filename='js/appsunburst.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/appsunburst2.js') }}"></script>
     <!-- <script src="../static/js/appsunburst.js"></script> -->
     <!-- <script src="plot.js"></script> -->
     <script src="{{ url_for('static', filename='js/appbubbleplot.js') }}"></script>
