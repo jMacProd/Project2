@@ -91,11 +91,13 @@ function lineplot() {
       title: "May Twitter Activity",
       xaxis: {
           autorange: true,
-          type: "date"
+          type: "date",
+          title: 'May 2019 Daily Activity'
         },
         yaxis: {
           autorange: true,
-          type: "linear"
+          type: "linear",
+          title:"Total Likes,Comments & Retweets"
         },
         showlegend: false
   };
