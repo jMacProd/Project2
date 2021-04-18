@@ -10,9 +10,14 @@ function sunplot() {
         tickerarray = [];
         var labels = [];
         // var parents = ["", "", "", "", "", "TSLA", "TSLA", "TSLA", "TSLA", "TSLA", "AAPL", "AAPL", "AAPL", "AMZN", "AMZN", "AMZN", "GOOG", "MSFT" ];
-        var parents = ["", "", "", "", ""]
-        values = [68322,818,387,116,161, 11145, 25030, 10707, 9025, 12415, 20, 777, 21, 350, 23, 14, 116, 161];
+        //Ideally would create a loop to add as many empty items to the start of this list rather than manualy adding them.
+        //As first 5 items in labels are the tickers, they do not have parents in the parents list.
+        //But the parents for the other labels must be in the same list position as the labels
+        var parents = []
+        //This is the vales that manually work for live website
+        values = [];
 
+        //Setting a list of top level of sunburst hierarchy (ie the tickers)
         for (var i = 0; i < data.length; i++) {
 
             // console.log(data[i].ticker_symbol);
@@ -21,13 +26,16 @@ function sunplot() {
             var currenttickervalue = data[i].ticker_symbol;
             // console.log(currenttickervalue);
 
+            //Colelcting a unique list of tickers to use other loops
             if(tickerarray.indexOf(currenttickervalue) == -1){
 
                 tickerarray.push(currenttickervalue);
+                parents.push("");
+                values.push(0);
 
             }
 
-
+            //Adding the unique list of tickers into the sunburst label list - the labels are a list of all unique items in the sunburst (ie tickers and writers)
             if(labels.indexOf(currenttickervalue) == -1){
 
                 labels.push(currenttickervalue);
@@ -38,6 +46,7 @@ function sunplot() {
 
         console.log('tikerarray', tickerarray);
 
+        //Adding the unique list of writers per ticker group to the labels list
         for (var t = 0; t < tickerarray.length; t++){
 
             labelholdingarray = [];
@@ -53,48 +62,82 @@ function sunplot() {
 
                 }
 
-
+                 
                 if (labelholdingarray.indexOf(currentwriter) == -1){
                     labelholdingarray.push(currentwriter);
+                    //Also used same loop to collect the parents for writer within a ticker group.
                     parentholdingarray.push(tickerarray[t]); 
                     // valueholdingarray.push(currentvalue); 
 
  
                 }
+
+                
             }
             // console.log("valueholdingarray", valueholdingarray)
 
+            //Add the collected label and parent list into their main lists.
+            //Needs to be done this way so as the labels list is added, so is correct parent added in the same list position as label.
             for (var h = 0; h < labelholdingarray.length; h++) {
+                sum = 0;
+                labels.push(labelholdingarray[h]);
+                parents.push(parentholdingarray[h]);
 
-                    labels.push(labelholdingarray[h]);
-                    parents.push(parentholdingarray[h]);
+                // console.log(tickerarray[t], labelholdingarray[h]);
+
+                for (var y = 0; y < data.length; y++) {
+                    // console.log("data.writer", data[y].writer);
+                    
+                    if (tickerarray[t] == data[y].ticker_symbol && labelholdingarray[h] == data[y].writer) {
+                        // console.log(tickerarray[t], ":", data[y].ticker_symbol);
+                        sum += data[y].reaction_total
+                    }
+
+                    
+                }
+                console.log(tickerarray[t], labelholdingarray[h], sum);
+                values.push(sum);
+                
+
+                   
 
 
             } 
 
+            // ///////VALUE CODE HERE
+            // for (var v = 5; v < labelholdingarray.length; v++){
+            //     console.log(tickerarray[t], labels[v]);
+
+            //  }
+            
+
 
         }
         console.log('labels', labels); 
-        valuearray = [];
-        for (var t = 0; t < tickerarray.length; t++){
-            // console.log("tickerarray", tickerarray[t]); 
-            for (var l = 5; l < labels.length; l++){
-                // console.log("labels", labels[l]); 
-                for (var y = 0; y > data.length; y++) {
-                    console.log("data.length", data.length);
-                    sum = 0;
-                    if (tickerarray[t] == data[y].ticker_symbol) {
-                        if (labels[l] == data[y].writer) {
-                            valuearray.push(data[y].reaction_total);
-                            // console.log("reaction", data[y].reaction_total);
+        
+        // valuearray = [];
+        // for (var t = 0; t < tickerarray.length; t++){
+        //     valuearray = [];
+        //     console.log("tickerarray", tickerarray[t]); 
+        //     for (var l = 5; l < labels.length; l++){
+        //         console.log("labels", labels[l]); 
+        //         for (var y = 0; y < data.length; y++) {
+        //             // console.log("data.writer", data[y].writer);
+        //             sum = 0;
+        //             if (tickerarray[t] == data[y].ticker_symbol && labels[l] == data[y].writer) {
+        //                 sum += data[y].ticker_symbol
+        //                 // console.log(tickerarray[t], ":", data[y].ticker_symbol)
+        //                 // if (labels[l] == data[y].writer) {
+        //                     // valuearray.push(data[y].reaction_total);
+        //                     // console.log("reaction", data[y].reaction_total);
 
-                        }
-                    }
-                }
-            }
+        //                 // }
+        //             }
+        //         }
+        //     }
                 
-        }
-        console.log("valuearray", valuearray);
+        // }
+        // console.log("valuearray", valuearray);
 
         //////////
         //PARENTS
