@@ -1,4 +1,4 @@
-var file = "/static/Rawjson.json";
+var file = "/fulldata";
 var width = 650;
 var height = 650;
 var colors = {
