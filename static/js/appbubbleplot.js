@@ -1,6 +1,6 @@
 var file = "/static/Rawjson.json";
-var width = 650;
-var height = 650;
+var width = 575;
+var height = 575;
 var colors = {
     AAPL: '#F16529',
     AMZN: '#1C88C7',

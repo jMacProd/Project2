@@ -22,16 +22,18 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron" style="text-align: center">
+        <!-- <div class="jumbotron jumbotron-fluid" style="text-align: center"> -->
+        <!-- <div class="jumbotron" style="text-align: center"> -->
+        <div id="banner" style="text-align: center">
             <h1>Twitter Traffic</h1>
-            <p>The top performers on the NASDAQ is Apple, Google, Amazon, Microsoft and Tesla.</p>
-            <p>Here's the twitter activity around these companies.</p>
+            <p>The top performers on the NASDAQ is Apple, Google, Amazon, Microsoft and Tesla.
+            <br>Here's the twitter activity around these companies.</p>
         </div>
 
         <!-- ROW 1 -->
         <div class="row">
-            <!--CELL 1 OF 2 -->
-            <div class="col-md-4">
+            <!--CELL 1 OF 1 -->
+            <div class="col-md-12">
                 <div class="well">
                     <h4>Choose the kind of tweet you would like to see</h4>
                    <select id="toptweet" onchange="getval(this)"></select>
@@ -44,9 +46,11 @@
                   </div>
 
             </div>
-
+        </div>
+        <!--ROW 2-->
+        <div class="row">
             <!--CELL 2 OF 2 -->
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <h2>Month Activity</h2>
                 <div class="well">
                     <h5>Select a company.:</h5>
@@ -74,10 +78,10 @@
 
         </div>
 
-        <!-- ROW 2 -->
+        <!-- ROW 3 -->
         <div class="row">
             <!--CELL 1 OF 2 -->
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <h2>Activity of all writers</h2>
                 <div id="bubbleplot">
 
@@ -94,15 +98,15 @@
                         <option id="4" value="MSFT">Microsoft</option>
                         <option id="5" value="TSLA">Tesla Inc</option>
                     </select>--><!--onchange="optionChanged(this.value)"-->
-                </div>
-                <div id="lineplot"></div> -->
+                <!-- </div> -->
+                <!-- <div id="lineplot"></div> -->
             </div>
 
             <!--CELL 2 OF 2 -->
             <div class="col-md-4">
                 <h2>Top Writers</h2>
-                <p>Click at the centre of the plot to view the individual companies' top writers. <br>
-                    Hover over a writer to see the total count of the likes, comments and shares</p>
+                <p>Click at the centre to view the top writers on each company. <br>
+                    Hover over a writer for total count of likes, comments, shares</p>
                 <div id="sunburstplot">
                 </div>
                 <!-- <h2>Activity of all writers</h2>
@@ -115,7 +119,7 @@
 
         </div>
 
-        <!-- ROW 3 - To add some space below final chart -->
+        <!-- ROW 4 - To add some space below final chart -->
         <div class="row">
             <!--CELL 1 OF 1 -->
             <div class="col-md-12">

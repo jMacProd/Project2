@@ -9,11 +9,22 @@ svg {
     height: 910px;
 }*/
 
+
+
+#banner {
+    background-color: lightgrey;
+  }
+
 #bubble-chart text {
     text-anchor: middle;
     font: 10px sans-serif;
     pointer-events: none;
     opacity: 0;
+}
+
+#sunburstplot {
+    width: 600px;
+    height:600px;
 }
 
 /*circle {
