@@ -60,7 +60,7 @@ import simplejson
 # from sqlalchemy import create_engine
 # import psycopg2
 #cofig.py file used to store user and password details. File not tracked to github
-from config import user, password
+# from config import user, password
 
 #From Sqlalchemy challenge - read sqlite database into Flask app
 # import sqlalchemy
@@ -104,9 +104,9 @@ app = Flask(__name__)
 
 # #SQLAlchemy - from Pet Pals example - no idea what it is doing
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace("://", "ql://", 1) or "sqlite:///db.sqlite"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace("://", "ql://", 1) or "sqlite:///db.sqlite"
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://{user}:{password}@localhost:5432/twitteractivity'
-app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@localhost:5432/twitteractivity'
+# app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@localhost:5432/twitteractivity'
 
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
