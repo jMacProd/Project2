@@ -1,6 +1,6 @@
 # Twitter Activity
 
-Building a dashboard with multiple interactive charts to allow exploration of the Twitter activity around the top 6 NASDAQ Companies. The dashboard would provides an organisation awareness of the social media activity concernting them, or modifed to track the activity of their own tweets.
+Building a dashboard with multiple interactive charts to allow exploration of the Twitter activity around the top 6 NASDAQ Companies. The dashboard would provide an organisation awareness of the social media activity concerning them, or modifed to track the activity of their own tweets.
 
 To develop the dashboard a single source of data was used covering the twitter activity for 5 writers for May 2019. It included the company being written about, the writer, date posted, body of the tweet and the likes, comments, shares and a total of these for all tweets.
 
@@ -10,7 +10,7 @@ The visualisations include:
 * A non-standard D3.js bubble chart indicating the activity around all writers and the company they are referencing
 * A sunburst chart showing the top writers utilising the AnyChart JS library
 
-Further development is out of scope of this project but it can be expanded on to include a greater range of dates and writers and a potential to make us of APIs from the Twitter Developement site.  
+Further development is out of scope of this project but it can be expanded to include a greater range of dates and writers and a potential to make use of APIs from the Twitter Developement site.  
 
 ## Link to site
 The web app has been deployed via  Heroku
@@ -82,7 +82,7 @@ A dedicated environment was established for this project.
 
 ## Order for running flask app with database on local server
 
-### Step 1 - Edit app.py to point to local database (currenlty points to database connected to Heruko deployment)
+### Step 1 - Edit app.py to point to local database (currently points to database connected to Heruko deployment)
 * Comment out **app.config[‘SQLALCHEMY_DATABASE_URI’] = os.environ.get(‘DATABASE_URL’, ‘’).replace(“://“, “ql://“, 1) or “sqlite:///db.sqlite”**
 * un-comment out **app.config[‘SQLALCHEMY_DATABASE_URI’] = f’postgresql://{user}:{password}@localhost:5432/twitteractivity’**
 * un-comment out **from config import user, password**
@@ -101,10 +101,9 @@ A dedicated environment was established for this project.
 * **Enter into gitbush/terminal:** conda activate project2
 * **Enter into gitbush/terminal:** python app.py
 * **Go to:** http://127.0.0.1:5000/ in Google Chrome
-* **Click:** a company button to show visualisation for relevent data
 
 ## Final Output
-![Twitter Ativity Screenshot]()
+![Twitter Ativity Screenshot](https://raw.githubusercontent.com/jMacProd/Project2/main/Submission%20documents/TwitterActivityScreenShot.png)
 
 ## Data Mungling
 * Imported three relational CSV datasets into Python
