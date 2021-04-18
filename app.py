@@ -20,7 +20,7 @@ import simplejson
 
 
 #cofig.py file used when accessing data from locally hosted postgres database. Commented out for Heroku deployment. File not tracked to github
-# from config import user, password
+from config import user, password
 
 #################################################
 # Flask Setup
@@ -37,10 +37,10 @@ app = Flask(__name__)
 
 # From Pet Pals example
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace("://", "ql://", 1) or "sqlite:///db.sqlite"
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace("://", "ql://", 1) or "sqlite:///db.sqlite"
 
 #app code used when accessing data from locally hosted postgres database. Commented out for Heroku deployment.
-# app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@localhost:5432/twitteractivity'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@localhost:5432/twitteractivity'
 
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
