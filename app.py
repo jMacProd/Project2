@@ -60,7 +60,7 @@ import simplejson
 # from sqlalchemy import create_engine
 # import psycopg2
 #cofig.py file used to store user and password details. File not tracked to github
-from config import user, password
+# from config import user, password
 
 #From Sqlalchemy challenge - read sqlite database into Flask app
 # import sqlalchemy
