@@ -1,4 +1,4 @@
-var file = "/fulldata";
+var file = "/static/Rawjson.json";
 var width = 650;
 var height = 650;
 var colors = {
@@ -60,9 +60,13 @@ var generateChart = data => {
         .duration(1000)
         .style('opacity', 1)
 };
-
-(async () => {
-    data = await d3.json(file).then(data => data);
+d3.json(file).then(function(data){
+    console.log(data);
     generateChart(data);
 });
+
+// (async () => {
+//     data = await d3.json(file).then(data => data);
+//     generateChart(data);
+// });
 // ();
