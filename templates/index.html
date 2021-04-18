@@ -26,19 +26,6 @@
             <h1>Twitter Traffic</h1>
             <p>The top performers on the NASDAQ is Apple, Google, Amazon, Microsoft and Tesla.</p>
             <p>Here's the twitter activity around these companies.</p>
-            <!-- <a href="/apple" type="button" class="btn btn-primary btn-sm">Apple Mentions</a> -->
-            <!-- <a href="/amazon" type="button" class="btn btn-primary btn-sm">Amazon Mentions</a> -->
-            <!-- <div class="well">
-                <h5>Select a company.:</h5>
-                <select id="selDataset">
-                    <option id="0" value="fulldata">All Data</option>
-                    <option id="1" value="AAPL">Apple</option>
-                    <option id="2" value="AMZN">Amazon.com</option>
-                    <option id="3" value="GOOG">Google Inc</option>
-                    <option id="4" value="MSFT">Microsoft</option>
-                    <option id="5" value="TSLA">Tesla Inc</option> -->
-                <!--</select>--><!--onchange="optionChanged(this.value)"-->
-            <!-- </div> -->
         </div>
 
         <!-- ROW 1 -->
@@ -46,12 +33,12 @@
             <!--CELL 1 OF 2 -->
             <div class="col-md-6">
                 <div class="well">
-                    <h5>Choose the kind of tweet you would like to see</h5>
+                    <h3>Choose the kind of tweet you would like to see</h5>
                    <select id="toptweet" onchange="getval(this)"></select>
                   </div>
                   <div class="panel panel-primary">
                     <div class="panel-heading">
-                      <h3 class="panel-title">Tweet:</h3>
+                      <h5 class="panel-title">Tweet:</h3>
                     </div>
                     <div id="sample-metadata" class="panel-body"></div>
                   </div>
@@ -61,9 +48,9 @@
             <!--CELL 2 OF 2 -->
             <div class="col-md-6">
                 <h2>Top Writers</h2>
+                <p>Click at the centre of the plot to view the individual companies' top writers. <br>
+                    Hover over a writer to see the total count fo the likes, comments and shares</p>
                 <div id="sunburstplot">
-                    <!-- <p><i>Sample placement</i></p> -->
-                    <!-- <img src="static/placeholder_images/wordcloud.png"> -->
                 </div>
             </div>
 
@@ -75,47 +62,31 @@
             <div class="col-md-8">
                 <h2>Month Activity</h2>
                 <div class="well">
-                <h5>Select a company.:</h5>
-                <select id="selDataset">
-                    <option id="1" value="AAPL">Apple</option>
-                    <option id="2" value="AMZN">Amazon.com</option>
-                    <option id="3" value="GOOG">Google Inc</option>
-                    <option id="4" value="MSFT">Microsoft</option>
-                    <option id="5" value="TSLA">Tesla Inc</option>
-                </select><!--onchange="optionChanged(this.value)"-->
-            </div>
-                <div id="lineplot">
-
+                    <h5>Select a company.:</h5>
+                    <select id="selDataset">
+                        <option id="1" value="AAPL">Apple</option>
+                        <option id="2" value="AMZN">Amazon.com</option>
+                        <option id="3" value="GOOG">Google Inc</option>
+                        <option id="4" value="MSFT">Microsoft</option>
+                        <option id="5" value="TSLA">Tesla Inc</option>
+                    </select><!--onchange="optionChanged(this.value)"-->
                 </div>
+                <div id="lineplot"></div>
             </div>
 
             <!--CELL 2 OF 2 -->
             <div class="col-md-4">
                 <h2>Activity of all writers</h2>
                 <div id="bubbleplot">
-                    <!-- <p><i>Sample placement</i></p> -->
-                    <!-- <svg id="bubble-chart"></svg> -->
+
                     <svg id="bubble-chart"></svg>
                     
-                    <!--  -->
-                <!-- </div> -->
+                </div>
             </div>
 
         </div>
 
-        <!-- ROW 3 -->
-        <!-- <div class="row"> -->
-            <!--CELL 1 OF 1 -->
-             <!-- <div class="col-md-12">
-                <h2>Activity of all writers</h2>
-                <div id="bubbleplot"> -->
-                    <!-- <p><i>Sample placement</i></p> -->
-                    <!-- <img src="static/placeholder_images/bubbles.png">
-                </div>
-            </div>
-        </div> -->
-
-        <!-- ROW 4 - To add some space below final chart -->
+        <!-- ROW 3 - To add some space below final chart -->
         <div class="row">
             <!--CELL 1 OF 1 -->
             <div class="col-md-12">
@@ -126,29 +97,8 @@
             </div>
         </div>
 
-        <!-- PET PALS SAMPLE CODE -->
-        <!-- <div class="row">
-            <div class="col-md-12">
-                <h2>Look at all of the current pet pals!</h2>
-                <div id="plot"></div>
-            </div>
-        </div> -->
-
-        <!-- <div class="row">
-            <div class="col-md-12">
-                <h2><a href="/send">Add your pet here!</a></h2>
-            </div>
-        </div> -->
-        <!-- <div id="bubbleplot"> -->
-            <!-- <p><i>Sample placement</i></p> -->
-            <!-- <svg id="bubble-chart"></svg> -->
-            
-            <!--  -->
-        <!-- </div> -->
+ 
     </div>
-
-    <!-- D3 Script -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script> -->
 
     <!-- Plotly Script -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -159,10 +109,7 @@
     <script src="{{ url_for('static', filename='js/applineplot.js') }}"></script>
     <script src="{{ url_for('static', filename='js/linechartupdate.js') }}"></script>
     <script src="{{ url_for('static', filename='js/appsunburst.js') }}"></script>
-    <!-- <script src="../static/js/appsunburst.js"></script> -->
-    <!-- <script src="plot.js"></script> -->
-    <!-- <script src="{{ url_for('static', filename='js/appbubbleplot.js') }}"></script> -->
-    <script src="{{ url_for('static', filename='js/appbubbleplot2.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/appbubbleplot.js') }}"></script>
 
 
 </body>
