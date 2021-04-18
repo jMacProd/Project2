@@ -31,7 +31,7 @@
         <!-- ROW 1 -->
         <div class="row">
             <!--CELL 1 OF 2 -->
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="well">
                     <h4>Choose the kind of tweet you would like to see</h4>
                    <select id="toptweet" onchange="getval(this)"></select>
@@ -46,25 +46,6 @@
             </div>
 
             <!--CELL 2 OF 2 -->
-            <div class="col-md-6">
-                <h2>Activity of all writers</h2>
-                <div id="bubbleplot">
-
-                    <svg id="bubble-chart"></svg>
-                    
-                </div>
-                <!-- <h2>Top Writers</h2>
-                <p>Click at the centre of the plot to view the individual companies' top writers. <br>
-                    Hover over a writer to see the total count fo the likes, comments and shares</p>
-                <div id="sunburstplot">
-                </div> -->
-            </div>
-
-        </div>
-
-        <!-- ROW 2 -->
-        <div class="row">
-            <!--CELL 1 OF 2 -->
             <div class="col-md-8">
                 <h2>Month Activity</h2>
                 <div class="well">
@@ -78,6 +59,43 @@
                     </select><!--onchange="optionChanged(this.value)"-->
                 </div>
                 <div id="lineplot"></div>
+                <!-- <h2>Activity of all writers</h2>
+                <div id="bubbleplot">
+
+                    <svg id="bubble-chart"></svg>
+                    
+                </div> -->
+                <!-- <h2>Top Writers</h2>
+                <p>Click at the centre of the plot to view the individual companies' top writers. <br>
+                    Hover over a writer to see the total count fo the likes, comments and shares</p>
+                <div id="sunburstplot">
+                </div> -->
+            </div>
+
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="row">
+            <!--CELL 1 OF 2 -->
+            <div class="col-md-8">
+                <h2>Activity of all writers</h2>
+                <div id="bubbleplot">
+
+                    <svg id="bubble-chart"></svg>
+                    
+                </div>
+                <!-- <h2>Month Activity</h2>
+                <div class="well">
+                    <h5>Select a company.:</h5>
+                    <select id="selDataset">
+                        <option id="1" value="AAPL">Apple</option>
+                        <option id="2" value="AMZN">Amazon.com</option>
+                        <option id="3" value="GOOG">Google Inc</option>
+                        <option id="4" value="MSFT">Microsoft</option>
+                        <option id="5" value="TSLA">Tesla Inc</option>
+                    </select>--><!--onchange="optionChanged(this.value)"-->
+                </div>
+                <div id="lineplot"></div> -->
             </div>
 
             <!--CELL 2 OF 2 -->
