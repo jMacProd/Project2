@@ -22,10 +22,6 @@ svg {
     opacity: 0;
 }
 
-#sunburstplot {
-    width: 600px;
-    height:600px;
-}
 
 /*circle {
     cursor: pointer;

@@ -61,7 +61,7 @@ var generateChart = data => {
         .style('opacity', 1)
 };
 d3.json(file).then(function(data){
-    console.log(data);
+    // console.log(data);
     generateChart(data);
 });
 

@@ -9,7 +9,7 @@ function topTweets() {
     var url = '/fulldata';
 
     d3.json(url).then((data) => {
-        console.log(data);
+        // console.log(data);
 
         function getMax(arr, prop) {
             var max;
@@ -29,7 +29,7 @@ function topTweets() {
         var maxShares = getMax(data, "retweet_num");
         tweetText.push(maxShares.body);
     
-        console.log(tweetText);
+        // console.log(tweetText);
 
         //Combine the select and data in a key-value pair
         final_tweetData =  tweetText.reduce(function(tweetData, field, index) {
@@ -44,7 +44,7 @@ function topTweets() {
             topic.text(option);
         }));
         var firstSample = Object.keys(final_tweetData)[0];
-        console.log(firstSample);
+        // console.log(firstSample);
 
         //Display the initial load
         initialDisplay(firstSample);
@@ -56,7 +56,7 @@ function topTweets() {
 function initialDisplay(sample) {
     var demo = d3.select("#sample-metadata");
     var selectTweet = final_tweetData[sample];
-    console.log(selectTweet);
+    // console.log(selectTweet);
     demo.append("h6").text(`${selectTweet}`);
 }
 
@@ -65,13 +65,13 @@ function displayTweetOnChange(sample) {
     var demo = d3.select("#sample-metadata");
     demo.html("");
     var selectTweet = final_tweetData[sample];
-    console.log(selectTweet);
+    // console.log(selectTweet);
     demo.append("h6").text(`${selectTweet}`);
 }
 
 //On selecting an option
 function getval(sel) {
-    console.log(sel.value);
+    // console.log(sel.value);
     displayTweetOnChange(sel.value);
 }
 
