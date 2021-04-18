@@ -52,7 +52,7 @@ function lineplot() {
     var trace1 = {
       type: "scatter",
       mode: "lines",
-      name: "comments data",
+      name: "Total Comments",
       x: Xaxis,
       y: commentslist,
       line: {
@@ -64,7 +64,7 @@ function lineplot() {
   var trace2 = {
       type: "scatter",
       mode: "lines",
-      name: "retweets data",
+      name: "Total Retweets",
       x: Xaxis,
       y: retweetslist,
       line: {
@@ -76,7 +76,7 @@ function lineplot() {
   var trace3 = {
       type: "scatter",
       mode: "lines",
-      name: "likes data",
+      name: "Total Likes",
       x: Xaxis,
       y: likeslist,
       line: {
@@ -197,7 +197,7 @@ function updatelineplot(indexnumber) {
     var trace1 = {
       type: "scatter",
       mode: "lines",
-      name: "comments data",
+      name: "Total Comments",
       x: Xaxis,
       y: commentslist,
       line: {
@@ -209,7 +209,7 @@ function updatelineplot(indexnumber) {
   var trace2 = {
     type: "scatter",
     mode: "lines",
-    name: "retweets data",
+    name: "Total Retweets",
     x: Xaxis,
     y: retweetslist,
     line: {
@@ -221,7 +221,7 @@ function updatelineplot(indexnumber) {
   var trace3 = {
       type: "scatter",
       mode: "lines",
-      name: "likes data",
+      name: "Total Likes",
       x: Xaxis,
       y: likeslist,
       line: {
@@ -237,11 +237,13 @@ function updatelineplot(indexnumber) {
       title: "May Twitter Activity",
       xaxis: {
           autorange: true,
-          type: "date"
+          type: "date",
+          title: 'May 2019 Daily Activity',
         },
         yaxis: {
           autorange: true,
-          type: "linear"
+          type: "linear",
+          title:"Total Likes,Comments & Retweets"
         },
         showlegend: false
   }
